@@ -1,0 +1,53 @@
+Index: og.module
+===================================================================
+RCS file: /cvs/drupal-contrib/contributions/modules/og/Attic/og.module,v
+retrieving revision 1.616
+diff -u -p -r1.616 og.module
+--- og.module	31 Dec 2008 01:59:52 -0000	1.616
++++ og.module	1 Jul 2009 22:26:15 -0000
+@@ -2081,22 +2081,42 @@ function og_form_add_og_audience(&$form,
+   elseif ($cnt = count($options, COUNT_RECURSIVE)) {
+     // show multi-select. if less than 20 choices, use checkboxes.
+     $type = $cnt >= 20 || $is_optgroup ? 'select' : 'checkboxes';
++    
++    # group_confirm javascript
++	drupal_add_js(drupal_get_path('module', 'og').'/zog.js');
++
+     $form['og_nodeapi']['visible']['og_groups'] = array(
+       '#type' => $type, 
+-      '#title' => t('Audience'), 
+-      '#attributes' => array('class' => 'og-audience'),
++      '#title' => t('Click on the groups that should see this message, hold shift and click for multiple groups: '), 
++
++//		original line
++//      '#attributes' => array('class' => 'og-audience'),
++
++//		altered to call javascript confirm
++      '#attributes' => array('class' => 'og-audience','onchange' => 'group_confirm();'),
+       '#options' => $options, 
+       '#required' => $required, 
+       '#description' =>  format_plural(count($options), 'Show this post in this group.', 'Show this post in these groups.'),
+       '#default_value' => $groups ? $groups : array(),
+       '#required' => $required, 
+-      '#multiple' => TRUE);
++      '#multiple' => TRUE
++      );
++      
++      // <input type="checkbox" style="visibility:hidden" name="main_group_confirmed">
++	$form['og_nodeapi']['visible']['main_group_confirmed'] = array(
++		'#type' => 'checkbox', 
++		'#title' => 'Main Group Confirmed',
++		'#attributes' => array('class' => 'main_group_confirmed')
++		);
++
+   }
+   else if ($required) {
+     form_set_error('title', t('You must <a href="@join">join a group</a> before posting a %type.', array('@join' => url('og'), '%type' => node_get_types('name', $node->type))));
+   }
+ }
+ 
++
++
+ /**
+  * Define all OG message strings.
+  * Modelled after user.module

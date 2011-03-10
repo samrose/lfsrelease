@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2008-04-04T17:21:03.090535Z"
+   url="file:///home/admin/www/svn/repos/oardc/files"
+   last-author="root"
+   kind="dir"
+   uuid="9b325fa0-5c49-0410-a53b-823f039e45d9"
+   revision="2"/>
+<entry
+   committed-rev="2"
+   name="wayitwas.pdf"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="f6bc94fb1d7e9454d74f66c22f0c0605"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:19.000000Z"/>
+<entry
+   name="u58"
+   kind="dir"/>
+<entry
+   committed-rev="2"
+   name="Stinner Summit story with  pic.pdf"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="7877f6cf4bfad2a1eccb06833e6c5ec0"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:19.000000Z"/>
+<entry
+   committed-rev="2"
+   name="Local Food Systems Flowchart, 29Feb08.ppt"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="b6d1e0b2b7b4aed0a5d919b68fe176e6"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:19.000000Z"/>
+<entry
+   committed-rev="2"
+   name="Leap into Local Foods Workshop write-up.pdf"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="2db124f8fd273a465d0e13e37649801f"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:19.000000Z"/>
+<entry
+   committed-rev="2"
+   name="Brochure_MarketMakerOhio.pdf"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="4c0126c2bfdda05e8a44a4927341fa1a"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:19.000000Z"/>
+<entry
+   committed-rev="2"
+   name="FoodSystems.pdf"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="e0a62bda1883de61e2d48477e5ea4351"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:19.000000Z"/>
+<entry
+   committed-rev="2"
+   name="Renting - SFSCs and rural develpmt.pdf"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="e20de46e4c7d4148f0fed52c6b08f50b"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:19.000000Z"/>
+<entry
+   name="u3"
+   kind="dir"/>
+<entry
+   committed-rev="2"
+   name="sustagintro.pdf"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="4be92734f7ec6aa9ea4f397c819d22c7"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:19.000000Z"/>
+<entry
+   committed-rev="2"
+   name="LLFIntro.ppt"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="5631bd4aedc48e3005a3d78df41de040"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:20.000000Z"/>
+<entry
+   name="u115"
+   kind="dir"/>
+<entry
+   name="u125"
+   kind="dir"/>
+<entry
+   committed-rev="2"
+   name="Local Food Systems Flowchart for Food Only - 75.jpg"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="5dbe2b24ee67ee9d61d84b9c1de9b3ab"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:20.000000Z"/>
+<entry
+   name="pictures"
+   kind="dir"/>
+<entry
+   committed-rev="2"
+   name="Kates Sustainability Science.pdf"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="4b57061286695dab2a5b6b9842cff6eb"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:20.000000Z"/>
+<entry
+   committed-rev="2"
+   name="FoodPolicyBrief07.pdf"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="19e355dbda7ebc2326c4812a32d34066"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:20.000000Z"/>
+<entry
+   committed-rev="2"
+   name="PNASClimateCropPasture.pdf"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="7cb6da8e84b947c18c1e1bd53ccd5d22"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:20.000000Z"/>
+<entry
+   committed-rev="2"
+   name="LLFIntro.pdf"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="8e89f01b6075e87e078446182dd3c049"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:20.000000Z"/>
+<entry
+   committed-rev="2"
+   name="garland_logo.jpg"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="ac2a488547d03778a61def9df326b412"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:20.000000Z"/>
+<entry
+   committed-rev="2"
+   name="MFPC_Report_2006_174216_7.pdf"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="e773e845b9f18dc430e38d3a3bdeb981"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:20.000000Z"/>
+<entry
+   committed-rev="2"
+   name=".htaccess"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="0f2f5d16140d6eb13af6b30c98968f90"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:20.000000Z"/>
+<entry
+   committed-rev="2"
+   name="FAOfoodpolicies.pdf"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="e88afae30aed3bd9b77db047de040d66"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:20.000000Z"/>
+<entry
+   name="color"
+   kind="dir"/>
+<entry
+   committed-rev="2"
+   name="MultipleBenefitsRept.pdf"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:20.000000Z"/>
+<entry
+   committed-rev="2"
+   name="2007 Stinner Summit Logo - 25.jpg"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="176060d4d0b0c402910c2d005f940410"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:20.000000Z"/>
+</wc-entries>

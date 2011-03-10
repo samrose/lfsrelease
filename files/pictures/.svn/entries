@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2008-04-04T17:21:03.090535Z"
+   url="file:///home/admin/www/svn/repos/oardc/files/pictures"
+   last-author="root"
+   kind="dir"
+   uuid="9b325fa0-5c49-0410-a53b-823f039e45d9"
+   revision="2"/>
+<entry
+   committed-rev="2"
+   name="picture-62.jpg"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="bf6be7d0b9148f5055a3e60cddec2970"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:20.000000Z"/>
+<entry
+   committed-rev="2"
+   name="picture-117.jpg"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="ef445aee594eeb769989dbf846a58831"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:20.000000Z"/>
+<entry
+   committed-rev="2"
+   name="picture-1.jpg"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="14511572028b8017c805a5f51be1e476"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:20.000000Z"/>
+<entry
+   committed-rev="2"
+   name="picture-2.jpg"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="ab6e86aa499083c77a6b373fd22b223d"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:20.000000Z"/>
+<entry
+   committed-rev="2"
+   name="picture-3.jpg"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="628c6583adbc62976cb77172073927dd"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:20.000000Z"/>
+<entry
+   committed-rev="2"
+   name="picture-120.jpg"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="1d08f2ac34812ae9695c6aa984a6935e"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:20.000000Z"/>
+<entry
+   committed-rev="2"
+   name="picture-40.jpg"
+   text-time="2008-04-04T17:23:20.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="10e70f8c32b8ae28830c0ec122052b44"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:20.000000Z"/>
+</wc-entries>

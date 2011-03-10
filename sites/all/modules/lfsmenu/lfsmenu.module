@@ -1,0 +1,16 @@
+<?php
+/**
+* Implementation of hook_menu_alter().
+* Remember to clear the menu cache after adding/editing this function.
+*/
+function lfsmenu_menu_alter(&$items) {
+  // Removing certain local navigation tabs that are either undesired or need to be custom relocated.
+
+  // Set these tabs to MENU_CALLBACK, so they still register the path, but just don't show the tab:
+  $items['user/%user/messages']['type'] = MENU_CALLBACK;
+  $items['user/%user/notifications']['type'] = MENU_CALLBACK;
+  $items['user/%user/openid']['type'] = MENU_CALLBACK;
+  //$items['user/%user/contact']['type'] = MENU_CALLBACK;
+  $items['user/%user/track']['type'] = MENU_CALLBACK;
+  $items['user/%user/invites']['type'] = MENU_CALLBACK;
+}

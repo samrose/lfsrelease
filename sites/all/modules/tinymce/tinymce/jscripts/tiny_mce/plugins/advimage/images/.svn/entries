@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2008-04-04T17:21:03.090535Z"
+   url="file:///home/admin/www/svn/repos/oardc/sites/all/modules/tinymce/tinymce/jscripts/tiny_mce/plugins/advimage/images"
+   last-author="root"
+   kind="dir"
+   uuid="9b325fa0-5c49-0410-a53b-823f039e45d9"
+   revision="2"/>
+<entry
+   committed-rev="2"
+   name="sample.gif"
+   text-time="2008-04-04T17:23:15.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="b9c7057c46716340e8967340ad11766e"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:15.000000Z"/>
+</wc-entries>

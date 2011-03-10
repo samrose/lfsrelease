@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2008-04-04T17:21:03.090535Z"
+   url="file:///home/admin/www/svn/repos/oardc/sites/all/modules/tinymce/tinymce/examples/templates"
+   last-author="root"
+   kind="dir"
+   uuid="9b325fa0-5c49-0410-a53b-823f039e45d9"
+   revision="2"/>
+<entry
+   committed-rev="2"
+   name="count.htm"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="18f147cfd16b850097d35e1d343ee478"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   committed-rev="2"
+   name="editing_details.htm"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="48e5ec751b928dd4b95f19d0d44a8c47"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   committed-rev="2"
+   name="editors_comment.htm"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="f35bbe2742189a6f85a1fdd627f566fa"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   committed-rev="2"
+   name="invoice.htm"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="90d28d926e61c28744b4455138f4083b"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   committed-rev="2"
+   name="layout1.htm"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="72baa029f5d9c776dd32b0a1486591e7"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   committed-rev="2"
+   name="snippet1.htm"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="87042b028e888bb7318fac5d8b4f2731"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+</wc-entries>

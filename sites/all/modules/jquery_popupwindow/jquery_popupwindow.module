@@ -1,0 +1,54 @@
+<?php
+// $Id: jquery_popupwindow.module,v 1.1.2.6 2009/10/15 14:44:38 aaron Exp $
+
+/**
+ *  This will add the jquery_popupwindow plugin to the page.
+ *  Currently needs to be added manually by a developer.
+ */
+function jquery_popupwindow_add() {
+  static $installed = FALSE;
+
+  if (!$installed) {
+    drupal_add_js(drupal_get_path('module', 'jquery_popupwindow') .'/js/jquery.popupwindow.js');
+    $installed = TRUE;
+  }
+}
+
+/**
+ * Implementation of hook_menu().
+ */
+function jquery_popupwindow_menu() {
+  $items = array();
+  $items['admin/settings/jquery-popupwindow'] = array(
+    'title' => 'jQuery PopupWindow Settings',
+    'description' => 'Allows specified links to be displayed as Popup Windows',
+    'access arguments' => array('administer site configuration'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('jquery_popupwindow_admin'),
+    'file' => 'jquery_popupwindow.admin.inc',
+  );
+  return $items;
+}
+
+/**
+ * Implementation of hook_init().
+ */
+function jquery_popupwindow_init() {
+  if ($cache = cache_get('jquery_popupwindow_presets')) {
+    $settings = $cache->data;
+  }
+  else if ($presets = variable_get('jquery_popupwindow_presets', array())) {
+    // Process each preset to add the ':not(...)' jquery selector filters,
+    // needed for Drupal behaviors.
+    foreach ($presets as $key => $preset) {
+      $presets[$key]['preset'] = str_replace(',', ':not(.jqueryPopupwindowProcessed),', $preset['preset']) .':not(.jqueryPopupwindowProcessed)';
+      $settings['jqueryPopupwindowPreset_'. $key] = $presets[$key];
+    }
+    cache_set('jquery_popupwindow_presets', $settings);
+  }
+  if (isset($settings)) {
+    jquery_popupwindow_add();
+    drupal_add_js(drupal_get_path('module', 'jquery_popupwindow') .'/js/jquery_popupwindow.drupal.js', 'module', 'footer');
+    drupal_add_js(array('jqueryPopupwindowPresets' => $settings), 'setting');
+  }
+}

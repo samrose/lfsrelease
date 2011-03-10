@@ -1,0 +1,6 @@
+; $Id: ddblock.info,v 1.2 2008/12/23 16:53:41 ppblaauw Exp $
+name = Dynamic display block
+description = Displays dynamic content in a block.
+core = 6.x
+
+dependencies[] = "jquery_update"

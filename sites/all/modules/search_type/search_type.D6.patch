@@ -1,0 +1,82 @@
+Index: search_type.info
+===================================================================
+RCS file: /cvs/drupal-contrib/contributions/modules/search_type/search_type.info,v
+retrieving revision 1.1
+diff -u -p -r1.1 search_type.info
+--- search_type.info	26 Jul 2007 21:50:20 -0000	1.1
++++ search_type.info	9 May 2009 00:25:10 -0000
+@@ -1,5 +1,5 @@
+ ; $Id: search_type.info,v 1.1 2007/07/26 21:50:20 nedjo Exp $
+ name = Search Type
+ description = Adds a type selector to search blocks to limit searches by content type or to search users.
+-dependencies = search
+-
++dependencies[] = search
++core = 6.x
+\ No newline at end of file
+Index: search_type.module
+===================================================================
+RCS file: /cvs/drupal-contrib/contributions/modules/search_type/search_type.module,v
+retrieving revision 1.2
+diff -u -p -r1.2 search_type.module
+--- search_type.module	29 Aug 2007 22:36:54 -0000	1.2
++++ search_type.module	9 May 2009 00:25:10 -0000
+@@ -2,15 +2,20 @@
+ // $Id: search_type.module,v 1.2 2007/08/29 22:36:54 nedjo Exp $
+ 
+ /**
++ * @file
++ * search_type module allows user to choose type of search from within search block.
++ */
++
++/**
+  * Implementation of hook_form_alter().
+  */
+-function search_type_form_alter($form_id, &$form) {
++function search_type_form_alter(&$form, $form_state, $form_id) {
+   if (user_access('use advanced search') && in_array($form_id, array('search_block_form', 'search_theme_form'))) {
+-    $form['#submit']['search_type_submit'] = array();
++    $form['#submit'][] = 'search_type_submit';
+     $options = array();
+ 
+-    // Add standard 
+-    foreach(module_implements('search') as $module) {
++    // Add standard
++    foreach (module_implements('search') as $module) {
+       // Node is a special case.
+       if ($module != 'node' && $name = module_invoke($module, 'search', 'name')) {
+         $options[$module] = $name;
+@@ -43,8 +48,10 @@ function search_type_form_alter($form_id
+       '#weight' => -1,
+     );
+   }
++
++  // Admin settings
+   elseif ($form_id == 'search_admin_settings') {
+-    $form['search_type'] = array(        
++    $form['search_type'] = array(
+       '#type' => 'fieldset',
+       '#title' => t('Search type options'),
+     );
+@@ -61,10 +68,10 @@ function search_type_form_alter($form_id
+ /**
+  * Alter the search to respect the search mode selected in a block.
+  */
+-function search_type_submit($form_id, $form_values) {
+-  $type = $form_values['module'] ? $form_values['module'] : 'node';
+-  $keys = $form_values[$form_id .'_keys'];
+-  $mode = $form_values['search_type_mode'];
++function search_type_submit($form, &$form_state) {
++  $type = 'node';
++  $keys = $form_state['values'][$form_state['values']['form_id']];
++  $mode = $form_state['values']['search_type_mode'];
+   $search_types = module_implements('search');
+   if (in_array($mode, $search_types)) {
+     $type = $mode;
+@@ -78,5 +85,5 @@ function search_type_submit($form_id, $f
+     search_query_insert($keys, 'type');
+     $keys .= ' type:'. $mode;
+   }
+-  return 'search/'. $type .'/'. $keys;
++  $form_state['redirect'] = 'search/'. $type .'/'. $keys;
+ }

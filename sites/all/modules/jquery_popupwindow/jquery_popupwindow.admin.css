@@ -1,0 +1,13 @@
+/* $Id: jquery_popupwindow.admin.css,v 1.1.2.1 2009/10/14 21:11:49 aaron Exp $ */
+.jquery-popupwindow-settings-row {
+  margin-bottom: .75em;
+  border-bottom: 1px solid #ccc;
+}
+.jquery-popupwindow-settings-row .jquery-popupwindow-preset {
+  width: 40%;
+  float: left;
+}
+.jquery-popupwindow-settings-row .jquery-popupwindow-options {
+  width: 35%;
+  float: left;
+}

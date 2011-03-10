@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2008-04-04T17:21:03.090535Z"
+   url="file:///home/admin/www/svn/repos/oardc/sites/all/modules/tinymce/tinymce/jscripts/tiny_mce/plugins/fullpage/images"
+   last-author="root"
+   kind="dir"
+   uuid="9b325fa0-5c49-0410-a53b-823f039e45d9"
+   revision="2"/>
+<entry
+   committed-rev="2"
+   name="remove.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="b25c1ccc9f2f08098f2c99c00201a2a6"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="move_down.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="bb50162ba809c773dc18fcc6d7c3e7d3"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="fullpage.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="09ba847c87d36af45ab464ee0598aaa6"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="add.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="1443a1b7e8e508aac44bd911a00c6a7c"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="move_up.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="039159ef2ca6c4441167208fa584ba7b"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+</wc-entries>

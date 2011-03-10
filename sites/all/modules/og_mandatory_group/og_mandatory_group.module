@@ -1,0 +1,194 @@
+<?php
+// $Id: og_mandatory_group.module,v 1.12 2008/09/06 20:50:27 pwolanin Exp $
+
+/**
+ * Implementation of hook_help
+ *
+ */
+function og_mandatory_group_help($path, $arg) {
+  $output = '';
+  switch ($path) {
+    case 'admin/og_settings/og_mandatory_group':
+      $output =  '<p>'. t('Choose one group that all new users will be put into. You can chose either an open or a closed group. The user will be auto-approved as member of the group.');
+      $output .= '</p><p>'. t('You may also choose to require the new user to join one group in addition to any mandatory group. This setting will only have an effect if there are groups listed in the user registration form.'). '</p>';
+      break;
+   }
+   return $output;
+}
+
+/**
+ * Implementation of hook_form_alter
+ *
+ */
+function og_mandatory_group_form_alter(&$form, $form_state, $form_id) {
+
+  if ($form_id == 'user_register' && isset($form['og_register'])) {
+    $form['og_register']['og_mandatory_in_form'] = array('#type' => 'value', '#value' => FALSE,);
+
+    $group_count = count($form['og_register']['og_register']['#options']);
+    if ($mandatory_group = variable_get('og_mandatory_group', 0)) {
+      if ($mandatory_group_in_form = in_array($mandatory_group, array_keys($form['og_register']['og_register']['#options']))) {
+        $title = $form['og_register']['og_register']['#options'][$mandatory_group]. ' '. t('(This group is mandatory)');
+        $form['og_register']['og_mandatory_in_form'] = array(
+          '#type' => 'checkbox',
+          '#title' => $title,
+          '#value' => TRUE,
+          '#attributes' => array('disabled' => 'disabled'),
+        );
+        unset($form['og_register']['og_register']['#options'][$mandatory_group]);
+        $group_count--;
+        $form['og_register'] = array_reverse($form['og_register']);
+      }
+    }
+    if ($group_count > 0 && variable_get('og_mandatory_additional_group', FALSE)) {
+      if ($mandatory_group && $mandatory_group_in_form) {
+        $form['og_register']['minimum'] = array ('#value' => t('You must join at least one additional (non-mandatory) group.'),);
+      }
+      else {
+        $form['og_register']['minimum'] = array ('#value' => t('You must join at least one group.'),);
+      }
+    }
+  }
+}
+
+/**
+ * Implementation of hook_user
+ *
+ */
+function og_mandatory_group_user($op, &$edit, &$account, $category = NULL) {
+
+  if (!module_exists('og')) {
+    return;
+  }
+  switch ($op) {
+    case 'validate':
+      if (isset($edit['og_register']) && variable_get('og_mandatory_additional_group', FALSE)) { //only present during registration
+        if (count($edit['og_register']) > 0 && count(array_filter($edit['og_register'])) < 1) {
+          if ($edit['og_mandatory_in_form']) {
+            form_set_error('og_register', "You must join at least one group in addition to the mandatory group");
+          }
+          else {
+            form_set_error('og_register', "You must join at least one group");
+          }
+        }
+      }
+      break;
+    case 'insert':
+      // Sloppy modules may try to register an account with uid == 0.
+      if (($group = variable_get('og_mandatory_group', 0)) != 0 && $account->uid) {
+        og_save_subscription($group, $account->uid, array('is_active' => 1));
+        // mail the admins
+        $node = node_load($group);
+        $subj = t("'@name' joined @site and was assigned to group '@group'.", array('@group' => $node->title, '@name' => $account->name, '@site' => variable_get('site_name', 'drupal')));
+        $from = variable_get('site_mail', ini_get('sendmail_from'));
+
+        $groups = '';
+        if (!empty($edit['og_register'])) {
+          $result = db_query(db_rewrite_sql('SELECT n.nid, n.title, o.* FROM {node} n INNER JOIN {og} o ON n.nid = o.nid WHERE n.type IN ('. str_pad('', count(variable_get('og_node_types', array('og'))) * 5 - 1, "'%s',") .') AND n.status = 1 AND o.og_register = 1'), variable_get('og_node_types', array('og')));
+          while ($row = db_fetch_object($result)) {
+            if ($edit['og_register'][$row->nid]) {
+              switch ($row->og_selective) {
+                case OG_OPEN:
+                  $groups .= check_plain($row->title) .' '. t('(open group)');
+                  break;
+                case OG_MODERATED:
+                  $groups .= check_plain($row->title) .' '. t('(moderated group)');
+                  break;
+                case OG_INVITE_ONLY:
+                  $groups .= check_plain($row->title) .' '. t('(invite only group)');
+                  break;
+                case OG_CLOSED:
+                  $groups .= check_plain($row->title) .' '. t('(closed group)');
+                  break;
+              }
+              $groups .= "\n\t". url("node/$row->nid", array('absolute' => TRUE)) ."\n\n";
+            }
+          }
+        }
+        $sql = og_list_users_sql(1, 1);
+        $result = db_query($sql, $group);
+        while ($row = db_fetch_object($result)) {
+          if ($row->mail) {
+            $body = t('You may manage subscribers at @url', array('@url' => url("og/users/$node->nid", array('absolute' => TRUE))));
+            if (strlen($groups)) {
+              $body .= "\n". t('The user also subscribed to the following groups:') ."\n\n". $groups;
+            }
+            if (user_access('administer users', user_load(array('uid' => $row->uid)))) {
+              $body .= "\n". t('You may manage this user at @url', array('@url' => url("user/$account->uid/edit", array('absolute' => TRUE))));
+            }
+            // array of params with the context so the message will be sent properly
+            $params = array('context' => array('subject' => $subj, 'body' => $body));
+            drupal_mail('og_mandatory_group', 'notify', $row->mail, language_default(), $params, $from);
+          }
+        }
+      }
+      break;
+  }
+}
+
+/**
+ * Implementation of hook_mail()
+ */
+function og_mandatory_group_mail($key, &$message, $params) {
+  $context = $params['context'];
+  $message['subject'] = str_replace(array("\r", "\n"), '', $context['subject']);
+  $message['body'] = drupal_html_to_text($context['body']);
+}
+
+/**
+ * Implementation of hook_menu
+ *
+ */
+function og_mandatory_group_menu() {
+  $items['admin/og/og_mandatory_group'] = array(
+    'title'            => t('Organic groups mandatory group'),
+    'description'      => t('Make one group mandatory for new users and/or require new users to pick a group.'),
+    'page callback'    => 'drupal_get_form',
+    'page arguments'   => array('og_mandatory_group_settings'),
+    'access arguments' => array('administer site configuration'),
+  );
+  return $items;
+}
+
+/**
+ * menu callback for module settings
+ *
+ */
+function og_mandatory_group_settings() {
+  $options[0] = theme('placeholder', t('none'));
+  $result = db_query("SELECT n.nid, n.title, o.* FROM {node} n INNER JOIN {og} o ON n.nid = o.nid WHERE (o.og_selective = %d OR o.og_selective = %d) ORDER BY n.title", OG_CLOSED, OG_OPEN);
+  while ($group = db_fetch_object($result)) {
+    $options[$group->nid] = check_plain($group->title);
+    switch ($group->og_selective) {
+      case OG_OPEN:
+        $options[$group->nid] .= ' '. theme('placeholder', t('Open group, users can unsubscribe.'));
+        break;
+      case OG_CLOSED:
+        $options[$group->nid] .= ' '. theme('placeholder', t('Closed group, users can not leave.'));
+        break;
+    }
+  }
+  $form['groups'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Choose the mandatory group'),
+  );
+  $form['groups']['og_mandatory_group'] = array(
+    '#type' => 'radios',
+    '#options' => $options,
+    '#default_value' => variable_get('og_mandatory_group', 0),
+  );
+
+  $form['og_mandatory_additional_group'] = array(
+      '#type' => 'checkbox',
+      '#title' => t('Require new users to join at least one group in addition to any mandatory group'),
+      '#default_value' => variable_get('og_mandatory_additional_group', FALSE),
+  );
+  $form['#validate'][] = 'og_mandatory_group_settings_validate';
+  return system_settings_form($form);
+}
+
+function og_mandatory_group_settings_validate($form, &$form_state) {
+  if (!isset($form['groups']['og_mandatory_group']['#options'][$form_state['values']['og_mandatory_group']])) {
+    form_set_error('groups', t('Invalid mandatory group- please choose an option from the list.'));
+  }
+}

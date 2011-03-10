@@ -1,0 +1,3 @@
+syntax: glob
+
+sites/default/settings.php

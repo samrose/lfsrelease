@@ -1,0 +1,7 @@
+; $Id: views_bonus_export.info,v 1.2 2009/05/05 19:45:06 neclimdul Exp $
+name = Bonus: Views Export
+description = "Plugin to export views a couple of formats including Comma Separated Values(CSV), Doc or XML"
+dependencies[] = views
+package = Views
+core = 6.x
+

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2008-04-04T17:21:03.090535Z"
+   url="file:///home/admin/www/svn/repos/oardc/sites/all/modules/tinymce/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras/images"
+   last-author="root"
+   kind="dir"
+   uuid="9b325fa0-5c49-0410-a53b-823f039e45d9"
+   revision="2"/>
+<entry
+   committed-rev="2"
+   name="date_time.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="867e95f603e63a1f0c02fbde1490ab3e"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="remove_button_bg.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="73e1c5d740280ff1510d552e5cbba206"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="del.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="bb3d81d7c4b69a861b4e4f735869ed89"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="cite.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="62d9d435cb76aafe07aa6c96c8352c6d"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="abbr.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="37d9ef2c35bc1b2f5a4a0d56f9a434eb"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="attribs.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="81319a9cb6f993a9d78ed030cdb9d6e2"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="acronym.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="ce12c6467211f79c21a02db3ed2ff9c1"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="ins.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="d108419ea42611dff062fa19674b108d"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+</wc-entries>

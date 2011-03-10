@@ -1,0 +1,249 @@
+<?php
+// $Id: oauth_common.install,v 1.2 2009/06/23 06:55:59 hugowetterberg Exp $
+
+function oauth_common_install() {
+  drupal_install_schema('oauth_common');
+
+  // Create default authorization levels
+  $insert = "INSERT INTO {oauth_authorization_levels}(name, title, description) VALUES('%s','%s', '%s')";
+  db_query($insert, array(':name' => 'read',    ':title' => 'Read access',
+    ':description' => 'This will allow !appname to fetch content that you have access to on !sitename.'));
+  db_query($insert, array(':name' => 'update',  ':title' => 'Update access',
+    ':description' => 'This will allow !appname to update content that you have permissions to edit.'));
+  db_query($insert, array(':name' => 'create',  ':title' => 'Create access',
+    ':description' => 'This will allow !appname to create new content on !sitename.'));
+  db_query($insert, array(':name' => 'delete',  ':title' => 'Delete access',
+    ':description' => 'This will allow !appname to delete content from !sitename.'));
+}
+
+function oauth_common_uninstall() {
+  drupal_uninstall_schema('oauth_common');
+}
+
+function oauth_common_schema() {
+  module_load_include('6001.inc', 'oauth_common', 'updates/update');
+  $schema = array();
+
+  $schema['oauth_authorization_levels'] = _oauth_common_oauth_authorization_levels_6001();
+  $schema['oauth_common_consumer'] = array(
+    'description' => t('Information that allows external applications to access services.'),
+    'fields' => array(
+      'consumer_key' => array(
+        'description' => t('Consumer key.'),
+        'type'        => 'varchar',
+        'length'      => 32,
+        'not null'    => TRUE,
+      ),
+      'secret' => array(
+        'description' => t('Consumer secret.'),
+        'type'        => 'varchar',
+        'length'      => 32,
+        'not null'    => TRUE,
+      ),
+      'created' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The time that the consumer was created, as a Unix timestamp.',
+      ),
+      'changed' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The last time the consumer was edited, as a Unix timestamp.',
+      ),
+      'uid' => array(
+        'description' => t('The application owner.'),
+        'type'        => 'int',
+        'unsigned'    => TRUE,
+        'not null'    => TRUE,
+      ),
+      'name' => array(
+        'description' => t('The application name.'),
+        'type'        => 'varchar',
+        'length'      => 128,
+        'not null'    => TRUE,
+      ),
+      'type' => array(
+        'description' => t('The application type.'),
+        'type'        => 'varchar',
+        'length'      => 32,
+        'not null'    => TRUE,
+      ),
+      'callback_url' => array(
+        'description' => t('Callback url.'),
+        'type'        => 'varchar',
+        'length'      => 255,
+        'not null'    => TRUE,
+      ),
+    ),
+    'primary key' => array('consumer_key'),
+    'index' => array(
+      'user' => array('uid'),
+    ),
+  );
+  $schema['oauth_common_token'] = array(
+    'description' => t('Tokens stored on behalf of providers for request and services accesses.'),
+    'fields' => array(
+      'token_key' => array(
+        'description' => t('Token key.'),
+        'type'        => 'varchar',
+        'length'      => 32,
+        'not null'    => TRUE,
+      ),
+      'secret' => array(
+        'description' => t('Token secret.'),
+        'type'        => 'varchar',
+        'length'      => 32,
+        'not null'    => TRUE,
+      ),
+      'created' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The time that the token was created, as a Unix timestamp.',
+      ),
+      'changed' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The last time the token was edited, as a Unix timestamp.',
+      ),
+      'expires' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+        'description' => 'The expiry time for the token, as a Unix timestamp.',
+      ),
+      'type' => array(
+        'description' => t('Token type: request or access.'),
+        'type'        => 'varchar',
+        'length'      => 7,
+        'not null'    => TRUE,
+      ),
+      'uid' => array(
+        'description' => t('User ID from {user}.uid.'),
+        'type'        => 'int',
+        'unsigned'    => TRUE,
+        'not null'    => TRUE,
+        'default'     => 0,
+      ),
+      'consumer_key' => array(
+        'description' => t('Consumer key from {oauth_common_consumer}.consumer_key.'),
+        'type'        => 'varchar',
+        'length'      => 32,
+        'not null'    => TRUE,
+      ),
+      'services' => array(
+        'description' => t('An array of services that the user allowed the consumer to access.'),
+        'type'        => 'text',
+      ),
+      'authorized' => array(
+        'description' => t('In case its a request token, it checks if the user already authorized the consumer to get an access token.'),
+        'type'        => 'int',
+        'size'        => 'tiny',
+        'not null'    => TRUE,
+        'default'     => 0,
+      ),
+    ),
+   'primary key' => array('token_key'),
+   'indexes' => array(
+      'token_key_type' => array('token_key', 'type'),
+    ),
+  );
+  $schema['oauth_common_consumer_token'] = array(
+    'description' => t('Tokens stored on behalf of consumers for request and services accesses.'),
+    'fields' => array(
+      'token_key' => array(
+        'description' => t('Token key.'),
+        'type'        => 'varchar',
+        'length'      => 32,
+        'not null'    => TRUE
+      ),
+      'secret' => array(
+        'description' => t('Token secret.'),
+        'type'        => 'varchar',
+        'length'      => 32,
+        'not null'    => TRUE
+      ),
+      'type' => array(
+        'description' => t('Type of the token: request, access or consumer.'),
+        'type'        => 'varchar',
+        'length'      => 8,
+        'not null'    => TRUE
+      ),
+      'uid' => array(
+        'description' => t('The user that\'s associated with the token, if any.'),
+        'type'        => 'int',
+        'unsigned'    => TRUE,
+        'not null'    => TRUE,
+        'default'     => 0,
+      ),
+    ),
+   'primary key' => array('token_key'),
+   'indexes' => array(
+      'token_key_type' => array('token_key', 'type'),
+    ),
+  );
+  $schema['oauth_common_nonce'] = array(
+    'description' => t('Stores timestamp against nonce for repeat attacks.'),
+    'fields' => array(
+      'nonce' => array(
+        'description' => t('The random 32 characters long string used on each request.'),
+        'type'        => 'varchar',
+        'length'      => 32,
+        'not null'    => TRUE
+      ),
+      'timestamp' => array(
+        'description' => t('The timestamp of the request.'),
+        'type'        => 'int',
+        'not null'    => TRUE
+      ),
+      'token' => array(
+        'description' => t('Tokens for request and services accesses.'),
+        'type'        => 'varchar',
+        'length'      => 32
+      ),
+    ),
+    'primary key' => array('nonce'),
+    'indexes' => array(
+      'timestamp' => array('timestamp'),
+    ),
+  );
+  return $schema;
+}
+
+/**
+ * This update either creates a authorization levels table, or transfers the
+ * authorization levels table from the services_oauth module.
+ */
+function oauth_common_update_6001() {
+  module_load_include('6001.inc', 'oauth_common', 'updates/update');
+  $ret = array();
+  if (db_table_exists('services_oauth_authorization_levels')) {
+    $ret[] = update_sql("ALTER TABLE {services_oauth_authorization_levels} RENAME TO {oauth_authorization_levels}");
+  }
+  else {
+    db_create_table($ret, 'oauth_authorization_levels', _oauth_common_oauth_authorization_levels_6001());
+  }
+  return $ret;
+}
+
+/**
+ * This update adds a expiry time column to the tokens table.
+ */
+function oauth_common_update_6002() {
+  $ret = array();
+
+  db_add_field($ret, 'oauth_common_token', 'expires', array(
+    'type' => 'int',
+    'not null' => TRUE,
+    'default' => 0,
+    'description' => 'The expiry time for the token, as a Unix timestamp.',
+  ));
+  db_add_index($ret, 'oauth_common_token', 'expires', array('expires'));
+  $ret[] = update_sql("UPDATE {oauth_common_token} SET expires=created+7200 WHERE type='request'");
+
+  return $ret;
+}
+

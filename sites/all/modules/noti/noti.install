@@ -1,0 +1,69 @@
+<?php
+// $Id: noti.install,v 1.4.4.2 2010/19/03 14:12:15 samrose Exp $
+
+function noti_schema() {
+  $schema['noti'] = array(
+    'fields' => array(
+      'uid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0, 'disp-width' => '10'),
+      'status' => array('type' => 'int', 'not null' => TRUE, 'default' => '1', 'disp-width' => '10'),
+      ),
+    'primary key' => array('uid'),
+    
+  );
+  $schema['noti_groups'] = array(
+    'fields' => array(
+      'send_interval' => array('type' => 'int', 'not null' => TRUE, 'default' => '1', 'disp-width' => '10'),
+      'gid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0, 'disp-width' => '10'),
+      'uid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0, 'disp-width' => '10'),
+      ),    
+    'primary key' => array('gid','uid'),
+  );
+    $schema['noti_immediate_cue'] = array(
+    'fields' => array(
+      'uid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0, 'disp-width' => '10'),
+      'nid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0, 'disp-width' => '10'),
+      'gid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0, 'disp-width' => '10'),
+      'cid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0, 'disp-width' => '10'),
+      ),
+  );
+
+    $schema['noti_digest_cue'] = array(
+    'fields' => array(
+      'uid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0, 'disp-width' => '10'),
+      'nid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0, 'disp-width' => '10'),
+      'gid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0, 'disp-width' => '10'),
+      'cid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0, 'disp-width' => '10'),
+      ),
+  );
+    $schema['noti_sent'] = array(
+    'fields' => array(
+      'nid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0, 'disp-width' => '10'),
+      'cid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0, 'disp-width' => '10'),
+      'uid' => array('type' => 'int', 'unsigned' => TRUE, 'not null' => TRUE, 'default' => 0, 'disp-width' => '10'),
+      ),
+  );
+
+  return $schema;
+}
+
+function noti_install() {
+  // Create my tables.
+  drupal_install_schema('noti');
+}
+
+function noti_uninstall() {
+  drupal_uninstall_schema('noti');
+  foreach (array('groups','immediate_cue','digest_cue','sent') as $name) {
+    variable_del("noti_$name");
+  }
+}
+
+
+
+
+
+
+
+
+
+

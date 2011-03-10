@@ -1,0 +1,35 @@
+<?php
+// $Id: services_oauth.module,v 1.5 2010/01/25 20:01:41 hugowetterberg Exp $
+
+/**
+ * Implementation of hook_services_authentication().
+ */
+function services_oauth_authentication_info() {
+  return array(
+    'file' => 'services_oauth.inc',
+    '#title' => t('OAuth authentication'),
+    '#description' => t('An open protocol to allow secure API authorization'),
+    'security_settings' => '_services_oauth_security_settings',
+    'security_settings_submit' => '_services_oauth_security_settings_submit',
+    'alter_methods' => '_services_oauth_alter_methods',
+    'authenticate_call' => '_services_oauth_authenticate_call',
+  );
+}
+
+/**
+ * Implementation of hook_menu().
+ */
+function services_oauth_menu() {
+  $menu = array();
+
+  $menu['admin/build/services/authentication'] = array(
+    'title' => 'Authentication',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('_services_oauth_admin_authentication'),
+    'access arguments' => array('administer services'),
+    'file' => 'services_oauth.admin.inc',
+    'type' => MENU_LOCAL_TASK,
+  );
+
+  return $menu;
+}

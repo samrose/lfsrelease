@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2008-04-04T17:21:03.090535Z"
+   url="file:///home/admin/www/svn/repos/oardc/sites/all/modules/tinymce/tinymce/jscripts/tiny_mce/themes/advanced/docs/en/images"
+   last-author="root"
+   kind="dir"
+   uuid="9b325fa0-5c49-0410-a53b-823f039e45d9"
+   revision="2"/>
+<entry
+   committed-rev="2"
+   name="insert_image_window.gif"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="6a4f46e8a6c1881775fcd9ca9d63594f"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   committed-rev="2"
+   name="insert_table_window.gif"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="9658431bb5d8877c571f418dce48aea2"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   committed-rev="2"
+   name="insert_anchor_window.gif"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="6e90ebf990466fc64ebb3fa8c55eb6d4"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   committed-rev="2"
+   name="insert_link_window.gif"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="dd3267b077ab964d3e64f935cd1bde04"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+</wc-entries>

@@ -1,0 +1,27 @@
+Index: event.module
+===================================================================
+--- event.module	(revision 209)
++++ event.module	(working copy)
+@@ -356,6 +356,11 @@
+     '#maxlength' =>  5,
+     '#size' => 3,
+     '#description' => t('The default number of days to display in the table view. You can specify a different number of days in the url. More info on the event url format !link', array('!link' => l(t('here'), 'admin/help/event#url-format'))));
++  $form['event_navigation_extended'] = array(
++    '#type' => 'checkbox',
++    '#title' => t('Extended calendar navigation'),
++    '#default_value' => variable_get('event_navigation_extended', false),
++    '#description' => t('Allow event calendar navigation for one year before and after actual event range'));
+ 
+   if (module_exists('taxonomy')) {
+     $form['event_taxonomy_control'] = array(
+@@ -1751,7 +1756,9 @@
+     event_set_range();
+     $range = variable_get('event_range_'. $dir, $date);
+   }
+-
++  if (variable_get('event_navigation_extended', false)) {
++    $range['year'] = (string)((int)$range['year'] + (($dir == 'prev') ? -1 : +1));  	
++  }
+   // if we are beyond the range of the stored events, dont display navigation
+   if (($dir == 'prev' && event_is_later($date, $range)) || ($dir == 'next' && event_is_later($range, $date))) {
+     $inc = ($dir == 'prev' ? -1 : 1);

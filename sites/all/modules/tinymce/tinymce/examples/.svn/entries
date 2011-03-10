@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2008-04-04T17:21:03.090535Z"
+   url="file:///home/admin/www/svn/repos/oardc/sites/all/modules/tinymce/tinymce/examples"
+   last-author="root"
+   kind="dir"
+   uuid="9b325fa0-5c49-0410-a53b-823f039e45d9"
+   revision="2"/>
+<entry
+   committed-rev="2"
+   name="logo.jpg"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="257b4aa628ea43e7c03c85bf1734ee79"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   committed-rev="2"
+   name="example_simple.htm"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="fc590c6f28de9bffa763dd94c1170876"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   committed-rev="2"
+   name="example_template_list.js"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="62b4ec0d8118764fdb1654c475d9942f"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   name="templates"
+   kind="dir"/>
+<entry
+   committed-rev="2"
+   name="example_media_list.js"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="d6c66dd61c7fab1da914a13047966d9c"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   committed-rev="2"
+   name="example_image_list.js"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="7912907d457e977045059d76e192669f"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   committed-rev="2"
+   name="example_full.css"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="045f9a3378e52724248aba4443213338"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   committed-rev="2"
+   name="example_full.htm"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="32ff9488ac193b14560458f748477973"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   committed-rev="2"
+   name="example_advanced.css"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="900aac3a09be9fe2e14a476407e2d159"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   committed-rev="2"
+   name="example_advanced.htm"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="fb8460036a1cd625083cff9a0794b9b0"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   committed-rev="2"
+   name="logo_over.jpg"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="817d1ea5d4f9f283bf31b51ce81ea19c"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   committed-rev="2"
+   name="example_word.css"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="6177708af40c057a13c3696cddddb311"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   committed-rev="2"
+   name="example_template.htm"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="ada0eac763d8b4f363d8f09afaae2a3e"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   committed-rev="2"
+   name="example_word.htm"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="02ada9aa7cce69c2f8a70bb62b44bdff"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   committed-rev="2"
+   name="example_link_list.js"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="3f842026ca67a289432d26260640d848"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   committed-rev="2"
+   name="example_flash_list.js"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="49e8e7c08b8262105502da878011fc08"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+</wc-entries>

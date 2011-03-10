@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2008-04-04T17:21:03.090535Z"
+   url="file:///home/admin/www/svn/repos/oardc/sites/all/modules/tinymce/tinymce/jscripts/tiny_mce/themes/simple/css"
+   last-author="root"
+   kind="dir"
+   uuid="9b325fa0-5c49-0410-a53b-823f039e45d9"
+   revision="2"/>
+<entry
+   committed-rev="2"
+   name="editor_popup.css"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="dac09d36890ed1b1168d4223e619baa8"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   committed-rev="2"
+   name="editor_content.css"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="0f70f3ca9624e252d1c41ea064fc65e7"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   committed-rev="2"
+   name="editor_ui.css"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="91d2f8d2f0aa5f818710ca9206a08df6"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+</wc-entries>

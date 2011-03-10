@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2008-04-04T17:21:03.090535Z"
+   url="file:///home/admin/www/svn/repos/oardc/sites/all/modules/tinymce/tinymce/jscripts/tiny_mce/plugins/xhtmlxtras"
+   last-author="root"
+   kind="dir"
+   uuid="9b325fa0-5c49-0410-a53b-823f039e45d9"
+   revision="2"/>
+<entry
+   committed-rev="2"
+   name="acronym.htm"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="a8d072ad7e44ee78298ec971510a73fe"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="editor_plugin.js"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="b785882e649c820573c3ed3ccbfdaab6"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="ins.htm"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="e54e92b748f7c9bdebe9432ccce26293"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   name="jscripts"
+   kind="dir"/>
+<entry
+   name="langs"
+   kind="dir"/>
+<entry
+   name="images"
+   kind="dir"/>
+<entry
+   committed-rev="2"
+   name="editor_plugin_src.js"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="76fe4c25ec99bc4b7514c068f432b646"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   name="css"
+   kind="dir"/>
+<entry
+   committed-rev="2"
+   name="del.htm"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="5d7274b7186ac3ae866a18107f807285"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="cite.htm"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="a89d6899bc4b7cfd8a4ef6baa2ac98b1"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="abbr.htm"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="4f4749a75328fcb3730217494dc168da"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="attributes.htm"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="46a39c5b3ca4e2c02bdc2cf563d39df4"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+</wc-entries>

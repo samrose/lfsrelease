@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2008-04-04T17:21:03.090535Z"
+   url="file:///home/admin/www/svn/repos/oardc/sites/all/modules/tinymce/tinymce/jscripts/tiny_mce/plugins/fullscreen"
+   last-author="root"
+   kind="dir"
+   uuid="9b325fa0-5c49-0410-a53b-823f039e45d9"
+   revision="2"/>
+<entry
+   committed-rev="2"
+   name="editor_plugin.js"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="23993071d70dee0ca8351f33575c9642"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   name="langs"
+   kind="dir"/>
+<entry
+   name="images"
+   kind="dir"/>
+<entry
+   committed-rev="2"
+   name="editor_plugin_src.js"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="1ccf5b4b80b3857ae7e1cac837f34cf0"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   name="css"
+   kind="dir"/>
+<entry
+   committed-rev="2"
+   name="fullscreen.htm"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="47afdaeb0e27d1bc4ec98488bad44d1c"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="readme.txt"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="fe81b122bcf0e8599bb841cca33f967a"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+</wc-entries>

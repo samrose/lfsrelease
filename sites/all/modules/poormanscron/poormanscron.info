@@ -1,0 +1,4 @@
+;$Id: poormanscron.info,v 1.2 2008/02/06 16:35:17 robloach Exp $
+name = Poormanscron
+description = Internal scheduler for users without a cron application.
+core = 6.x

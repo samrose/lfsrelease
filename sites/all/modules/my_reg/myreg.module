@@ -1,0 +1,31 @@
+<?php
+
+/*
+*code copied from http://drupal.org/node/118498#comment-894619
+*/
+
+/*
+* Implementation of hook_form_alter
+*
+* @param $callbacks
+*
+*/
+
+function myreg_menu_alter(&$callbacks) {
+    // here I alter the access callback function for the path user/register
+
+    $callbacks['user/register']['access callback'] = 'myreg_register_access';
+}
+
+
+function myreg_register_access() {
+
+  // in the original user module this function is 'user_register_access'
+  // return user_is_anonymous() && variable_get('user_register', 1);
+  // i just simply removed the 'user_is_anonymous' call in the access check. so....
+
+  return variable_get('user_register', 1);
+    //return drupal_goto('');
+}
+
+

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2008-04-04T17:21:03.090535Z"
+   url="file:///home/admin/www/svn/repos/oardc/sites/all/modules/tinymce/tinymce/jscripts/tiny_mce/plugins/table/images"
+   last-author="root"
+   kind="dir"
+   uuid="9b325fa0-5c49-0410-a53b-823f039e45d9"
+   revision="2"/>
+<entry
+   committed-rev="2"
+   name="buttons.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="c05990049431872961c7db62971d06a7"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="table_delete_row.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="042dc1175054d232c221547fab7b12a6"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="table_row_props.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="e0b5cd204cd7da90331abe4a1459c763"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="table_insert_row_after.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="f244bea608118e1b6609d1ade714ecd5"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="table_insert_row_before.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="0e37e4c48dcddb1123bc6140ce323694"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="table_split_cells.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="bd42313bb8c84c717d67de8b70d5e16d"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="table_delete_col.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="af497964485d6ecce73aadf03a282afa"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="table.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="3ca9c0469bf52d46fd0b939bac08eb8d"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="table_merge_cells.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="9d9729ba4fa733c60b65ef1819ee7611"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="table_insert_col_after.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="48b353ad270b0e05d7de456cd811c420"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="table_cell_props.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="80b0c0e7d8112e83d3ffbfa49d2eeadb"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="table_delete.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="9ffee386cd63fea0e402447689ddb5dd"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="table_insert_col_before.gif"
+   text-time="2008-04-04T17:23:16.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="d5910a210405a8cc7a24086104b06fa1"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+</wc-entries>

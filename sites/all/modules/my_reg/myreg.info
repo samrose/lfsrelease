@@ -1,0 +1,3 @@
+name = My Registration
+description = "Override registration"
+core = 6.x

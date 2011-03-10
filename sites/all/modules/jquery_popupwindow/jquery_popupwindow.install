@@ -1,0 +1,29 @@
+<?php
+// $Id: jquery_popupwindow.install,v 1.1.2.1 2009/10/15 14:51:48 aaron Exp $
+
+function jquery_popupwindow_install() {
+  // Register the plugin with jQ.
+  jquery_popupwindow_reset_jq();
+}
+
+function jquery_popupwindow_uninstall() {
+  // Remove all variables that live in our namespace.
+  db_query("DELETE FROM {variable} WHERE name LIKE 'jquery_popupwindow_%'");
+  // Remove any cached presets.
+  cache_clear_all('jquery_popupwindow', 'cache', TRUE);
+}
+
+/**
+ *  Register this plugin with jQ.
+ */
+function jquery_popupwindow_reset_jq() {
+  // Clearing the jQ cache will force it to reregister.
+  cache_clear_all('jq_plugins', 'cache');
+}
+
+function jquery_popupwindow_update_6001() {
+  // Add the new preset admin page.
+  $ret = array();
+  menu_rebuild();
+  return $ret;
+}

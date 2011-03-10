@@ -1,0 +1,4 @@
+name = LFS Menu Overrides
+description = Overriding tabs in profile, and various menu items
+core = 6.x
+php = 5.0

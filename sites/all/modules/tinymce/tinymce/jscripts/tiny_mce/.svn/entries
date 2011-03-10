@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2008-04-04T17:21:03.090535Z"
+   url="file:///home/admin/www/svn/repos/oardc/sites/all/modules/tinymce/tinymce/jscripts/tiny_mce"
+   last-author="root"
+   kind="dir"
+   uuid="9b325fa0-5c49-0410-a53b-823f039e45d9"
+   revision="2"/>
+<entry
+   name="utils"
+   kind="dir"/>
+<entry
+   committed-rev="2"
+   name="license.txt"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="0571cf371683742c14f1735079a78e38"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:15.000000Z"/>
+<entry
+   committed-rev="2"
+   name="tiny_mce_dev.js"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="3e13f18dbe37e41381019e5550ca93d0"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:15.000000Z"/>
+<entry
+   name="plugins"
+   kind="dir"/>
+<entry
+   committed-rev="2"
+   name="tiny_mce.js"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="a5548c90ce4ed555b300f8f6b39d5ea6"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   name="langs"
+   kind="dir"/>
+<entry
+   name="themes"
+   kind="dir"/>
+<entry
+   committed-rev="2"
+   name="tiny_mce_popup.js"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="d247e068ee21389dfe86b523ff26b309"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:16.000000Z"/>
+<entry
+   committed-rev="2"
+   name="tiny_mce_src.js"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="2cb197a311ba3e2aee0e0c499b333e25"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+<entry
+   committed-rev="2"
+   name="blank.htm"
+   text-time="2008-04-04T17:23:17.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="3478607047646d8c513a8a0d521d7b44"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:17.000000Z"/>
+</wc-entries>

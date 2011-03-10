@@ -1,0 +1,15 @@
+A D/comment_service////
+A D/file_service////
+A D/menu_service////
+A D/node_resource////
+A D/node_service////
+A D/search_service////
+A D/servers////
+A D/services////
+A D/system_service////
+A D/taxonomy_service////
+A D/user_service////
+A D/views_service////
+R D/services////
+R D/servers////
+R D/node_resource////

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2008-04-04T17:21:03.090535Z"
+   url="file:///home/admin/www/svn/repos/oardc/sites/all/modules/tinymce/tinymce/jscripts/tiny_mce/plugins/media/images"
+   last-author="root"
+   kind="dir"
+   uuid="9b325fa0-5c49-0410-a53b-823f039e45d9"
+   revision="2"/>
+<entry
+   committed-rev="2"
+   name="quicktime.gif"
+   text-time="2008-04-04T17:23:15.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="9a6a9fdead205b125c07ea37e71ed4f1"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:15.000000Z"/>
+<entry
+   committed-rev="2"
+   name="flash.gif"
+   text-time="2008-04-04T17:23:15.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="6c69b02015d09280332ff8b07e4ea2f3"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:15.000000Z"/>
+<entry
+   committed-rev="2"
+   name="media.gif"
+   text-time="2008-04-04T17:23:15.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="da5e47910449f14d1b359b9e3345028a"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:15.000000Z"/>
+<entry
+   committed-rev="2"
+   name="realmedia.gif"
+   text-time="2008-04-04T17:23:15.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="b9734ee16d790e67bea01046feba28b7"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:15.000000Z"/>
+<entry
+   committed-rev="2"
+   name="windowsmedia.gif"
+   text-time="2008-04-04T17:23:15.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="c327cd167b3a7bc263d908b0d0154ead"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:15.000000Z"/>
+<entry
+   committed-rev="2"
+   name="shockwave.gif"
+   text-time="2008-04-04T17:23:15.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="baa643b587565755157618032dc93e3c"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:15.000000Z"/>
+</wc-entries>

@@ -1,0 +1,197 @@
+? og_all.patch
+? zog.js
+? modules/og_access/diff.txt
+? modules/og_access/diff2.txt
+? po/de.po
+Index: og.module
+===================================================================
+RCS file: /cvs/drupal-contrib/contributions/modules/og/Attic/og.module,v
+retrieving revision 1.628
+diff -u -p -r1.628 og.module
+--- og.module	31 Mar 2009 13:30:54 -0000	1.628
++++ og.module	17 Aug 2009 17:17:40 -0000
+@@ -2134,22 +2134,42 @@ function og_form_add_og_audience(&$form,
+   elseif ($cnt = count($options, COUNT_RECURSIVE)) {
+     // show multi-select. if less than 20 choices, use checkboxes.
+     $type = $cnt >= 20 || $is_optgroup ? 'select' : 'checkboxes';
++    
++    //group_confirm javascript
++	drupal_add_js(drupal_get_path('module', 'og').'/zog.js');
++
+     $form['og_nodeapi']['visible']['og_groups'] = array(
+       '#type' => $type, 
+-      '#title' => t('Audience'), 
+-      '#attributes' => array('class' => 'og-audience'),
++      '#title' => t('Now that you\'ve created your post, identify the groups to whom you want it sent'), 
++
++//		original line
++//      '#attributes' => array('class' => 'og-audience'),
++
++//		altered to call javascript confirm
++      '#attributes' => array('class' => 'og-audience','onchange' => 'group_confirm();'),
+       '#options' => $options, 
+       '#required' => $required, 
+       '#description' =>  format_plural(count($options), 'Show this post in this group.', 'Show this post in these groups.'),
+       '#default_value' => $groups ? $groups : array(),
+       '#required' => $required, 
+-      '#multiple' => TRUE);
++      '#multiple' => TRUE
++      );
++      
++      // <input type="checkbox" style="visibility:hidden" name="main_group_confirmed">
++	$form['og_nodeapi']['visible']['main_group_confirmed'] = array(
++		'#type' => 'checkbox', 
++		'#title' => 'Main Group Confirmed',
++		'#attributes' => array('class' => 'main_group_confirmed')
++		);
++
+   }
+   else if ($required) {
+     form_set_error('title', t('You must <a href="@join">join a group</a> before posting a %type.', array('@join' => url('og'), '%type' => node_get_types('name', $node->type))));
+   }
+ }
+ 
++
++
+ /**
+  * Define all OG message strings.
+  * Modelled after user.module
+Index: modules/og_access/og_access.module
+===================================================================
+RCS file: /cvs/drupal-contrib/contributions/modules/og/modules/og_access/Attic/og_access.module,v
+retrieving revision 1.32
+diff -u -p -r1.32 og_access.module
+--- modules/og_access/og_access.module	16 Mar 2009 17:51:13 -0000	1.32
++++ modules/og_access/og_access.module	17 Aug 2009 17:17:41 -0000
+@@ -169,7 +169,7 @@ function og_access_alter_nongroup_form(&
+           '#type' => 'checkbox', 
+           '#title' => t('Public'), 
+           '#default_value' => isset($node->og_public) ? $node->og_public : 1, 
+-          '#description' => t('Show this post to everyone, or only to members of the groups checked above. Posts without any groups are always <em>public</em>.'), 
++          '#description' => t('Next, to limit this message to only those groups you\'ve selected, uncheck this "public" box'), 
+           '#weight' => 2,
+         );
+         break;
+@@ -178,7 +178,7 @@ function og_access_alter_nongroup_form(&
+           '#type' => 'checkbox', 
+           '#title' => t('Public'), 
+           '#default_value' => isset($node->og_public) ? $node->og_public : 0, 
+-          '#description' => t('Show this post to everyone, or only to members of the groups checked above. Posts without any groups are always <em>public</em>.'), 
++          '#description' => t('Next, to limit this message to only those groups you\'ve selected, uncheck this "public" box'), 
+           '#weight' => 2,
+         );
+         break;
+Index: modules/og_notifications/og_notifications.module
+===================================================================
+RCS file: /cvs/drupal-contrib/contributions/modules/og/modules/og_notifications/Attic/og_notifications.module,v
+retrieving revision 1.24
+diff -u -p -r1.24 og_notifications.module
+--- modules/og_notifications/og_notifications.module	7 Apr 2009 21:16:26 -0000	1.24
++++ modules/og_notifications/og_notifications.module	17 Aug 2009 17:17:41 -0000
+@@ -443,6 +443,9 @@ function og_notifications_user_page($for
+         );
+       }
+ 
++// ----------------------------------------------------------------
++// original display
++
+       $bool = isset($ngroups[$gid]);
+       $all = array(
+         'all' => array(
+@@ -488,10 +491,68 @@ function og_notifications_user_page($for
+           '#default_value' => $value['send_method']
+         );
+       }
+-    }
++// original display end
++// ----------------------------------------------------------------
++
++// ----------------------------------------------------------------
++//  our display begins
++
++/* removed to not duplicate the one above.  restore later
++
++      $form[$group_index] = array(
++        '#type' => 'fieldset',
++        '#title' => check_plain($group['title']),
++        '#collapsible' => TRUE,
++        '#collapsed' => !isset($ngroups[$gid]) && empty($ngrouptypes[$gid])
++      );
++*/
++      // Reuse theme function.
++      $form[$group_index]['subscriptions_my'] = array(
++        '#tree' => TRUE,
++        '#parents' => array('groups', $gid),
++        '#theme' => 'notifications_form_table',
++      );
++
++	    //account edit javascript
++		drupal_add_js(drupal_get_path('module', 'lfsmessg').'/lfs.js');
++		
++// testing
++//        $form[$group_index]['subscriptions_my']['radio'][$key] = array(
++
++		// this value check $bool so we can set the correct radio button to be preselected
++		if ($bool) {
++			if ($bool==0){
++				$my_int_from_bool = 1;
++			} else {
++				$my_int_from_bool = 0;
++			}
++		} else {
++			$my_int_from_bool = 1;
++		}
++		
++        $form[$group_index]['subscriptions_my']['radio'] = array(
++	      '#attributes' => array('class' => 'lfs_custom_radio','onchange' => 'set_all_options(this,"'.$gid.'");'),
++          '#type' => 'radios',
++          '#options' => array(
++	  t('I want to receive an email when someone sends a post to this group.'),
++	  t('I don\'t want to receive an email when someone posts to this group.')
++	// for debug
++	/*
++	  t('I want to receive an email when someone sends a post to this group. (' . $bool . ')(' . $my_int_from_bool . ')'),
++	  t('I don\'t want to receive an email when someone posts to this group. (' . $bool . ')(' . $my_int_from_bool . ')')
++	*/
++	  ),
++          '#default_value' => $my_int_from_bool,
++        );
++      }
++
++
++//  our display ends
++// ----------------------------------------------------------------
+ 
+     $form['submit'] = array('#type' => 'submit', '#value' => t('Save'));
+   }
++
+   else {
+     $form = array();
+     drupal_set_message(t('There are no active group subscriptions available.'));
+Index: modules/og_views/og_views.module
+===================================================================
+RCS file: /cvs/drupal-contrib/contributions/modules/og/modules/og_views/Attic/og_views.module,v
+retrieving revision 1.18
+diff -u -p -r1.18 og_views.module
+--- modules/og_views/og_views.module	7 Apr 2009 20:57:06 -0000	1.18
++++ modules/og_views/og_views.module	17 Aug 2009 17:17:41 -0000
+@@ -226,8 +226,16 @@ function og_views_view_group($node, $tea
+  */
+ function og_views_views_pre_view(&$view, &$display_id, &$args) {
+   if ($view->name == 'og_my') {
++    if (!$view->display_handler->get_option('header')) {
++      //$txt = t('You might be interested in an <a href="!url" rel="nofollow">OPML feed containing feeds from all your subscribed groups</a>.', array('!url' => url('og/opml')));
++      
++      //$view->attachment_before = $txt;
++    }
+     if (!$view->display_handler->get_option('footer')) {
+-      $view->attachment_after = theme('opml_icon', url('og/opml'));
++      //$txt = t('You might be interested in an <a href="!url" rel="nofollow">OPML feed containing feeds from all your subscribed groups</a>.', array('!url' => url('og/opml')));
++      $view->attachment_after = theme('opml_icon', url('og/opml')) . '&nbsp;' . t('For advanced users only: click on the blue icon to automatically receive a single OPML feed from all of your groups   ');
++      
++      	
+     }
+   }
+-}
+\ No newline at end of file
++}

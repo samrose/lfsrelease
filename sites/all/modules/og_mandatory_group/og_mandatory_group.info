@@ -1,0 +1,7 @@
+; $Id: og_mandatory_group.info,v 1.2 2008/09/05 01:22:36 pwolanin Exp $
+name = Organic groups mandatory group
+description = Make one group mandatory for new users and/or require new users to pick a group.
+dependencies[] = og
+package = Organic groups
+core = 6.x
+php = 5.1

@@ -1,0 +1,114 @@
+<?php 
+    function howwhyheadsup_block_contents($which_block, $def, $lnk) { 
+//dsm($lnk);
+//dsm($def);
+
+       if ($which_block <= 1) { $helpPage = $def;
+       } else { $helpPage = 'http://localfoodsystems.org/node/'.$lnk; }
+       
+        $helpResp = "<div id='help-link'><a href='".$helpPage."'><img style='padding-right:10px;' title=\"\" alt=\"\" src=\"/sites/all/modules/howwhyheadsup/button.jpg\"></a></div>";
+
+        return $helpResp;
+    }
+
+    function howwhyheadsup_block($op = 'view', $delta = 0, $edit = array()) {
+        switch ($op) { 
+            case 'list': 
+            $blocks[0] = array( 'info' => t('How? Why? Heads Up!'), );
+            $blocks[1] = array( 
+'info' => t('How Why Heads up Block'), 
+'status' => TRUE, 
+'weight' => 0, 
+'visibility' => 1, 
+'pages' => 'node/*',
+            ); 
+            return $blocks;
+
+            case 'configure': 
+            // If $op is "configure", we need to provide the administrator with a 
+            // configuration form. The $delta parameter tells us which block is being 
+            // configured. In this example, we'll allow the administrator to customize 
+            // the text of the first block.
+            $form = array();
+            if ($delta == 0) {
+                // All we need to provide is a text field, Drupal will take care of 
+                // the other block configuration options and the save button.
+                $form['default_help_url'] = array( 
+'#type' => 'textfield', 
+'#title' => t('Default Help URL (How? Why? Heads Up!)'), 
+'#size' => 60, 
+'#maxlength' => 200,
+'#description' => t('This is your main help document.'),
+'#default_value' => variable_get('default_help_url',  t('Some example content.')),
+                );
+
+            } 
+
+            return $form;
+
+            case 'save':
+            // If $op is "save", we need to save settings from the configuration form.
+            // Since the first block is the only one that allows configuration, we
+            // need to check $delta to make sure we only save it.
+            if ($delta == 0) { 
+                // Have Drupal save the string to the database.             
+                variable_set('default_help_url', $edit['default_help_url']); 
+            } 
+            return;
+
+            case 'view':
+            default: 
+
+            $pageURL = 'http://' .$_SERVER["SERVER_NAME"]. $_SERVER["REQUEST_URI"];
+            $server = $_SERVER["SERVER_NAME"];
+	    //dsm($server); 
+	    $query = 'SELECT * FROM lfsmerge . {content_type_help_page} WHERE (field_help_url_value) = \'%s\';';
+	    //dsm($query);
+	    $result = db_query($query, $pageURL);
+	    //dsm($result);
+            $helpCheck = db_fetch_object($result);
+            //dsm($pageURL); 
+	    //dsm($helpCheck->field_help_url_value);
+		$node = node_load(arg(1)); //load the node you are looking at to test against below
+
+	    if($helpCheck->field_help_url_value == $pageURL){
+		//dsm('I am here');
+		$getHelp = 2;
+                $lnk = $helpCheck->nid;
+                $def = NULL;
+	    	}elseif(preg_match('#^http://localfoodsystems.org/user/\d*/edit#',$pageURL)){ 
+		//dsm('I am here');
+		$getHelp = 2;
+                $lnk = '729';
+                $def = NULL;
+	    	}elseif(preg_match('#^http://localfoodsystems.org/user/\d*/my_groups#',$pageURL)){ 
+		//dsm('I am here');
+		$getHelp = 2;
+                $lnk = '1134';
+                $def = NULL;
+	    	}elseif(preg_match('#^http://localfoodsystems.org/user/\d*/notify#',$pageURL)){ 
+		//dsm('I am here');
+		$getHelp = 2;
+                $lnk = '1135';
+                $def = NULL;
+	   }elseif($node->type == 'blog'){ 
+		//dsm($node);
+		$getHelp = 2;
+                $lnk = '730';
+                $def = NULL;
+
+
+		} else {
+	        //dsm($pageURL);
+                $getHelp = 1;
+                $def = variable_get('default_help_url', t('Default String'));
+                $lnk = NULL;
+ 		
+            }  
+            
+            $block['subject'] = t('Help');
+            $block['content'] = howwhyheadsup_block_contents($getHelp, $def, $lnk);
+            return $block;
+
+        }
+    }

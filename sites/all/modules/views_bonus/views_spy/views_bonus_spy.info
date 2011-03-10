@@ -1,0 +1,7 @@
+; $Id:
+name = Bonus: Views Spy
+description = Provides an jQuery spy views display plugin.
+package = Views
+core = 6.x
+dependencies[] = views
+

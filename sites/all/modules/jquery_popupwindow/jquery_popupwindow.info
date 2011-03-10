@@ -1,0 +1,5 @@
+; $Id: jquery_popupwindow.info,v 1.1.2.1 2009/10/14 19:15:04 aaron Exp $
+name = jQuery PopupWindow
+description = Wrapper for the jQuery PopupWindow plugin, creating customizable popup windows.
+package = User interface
+core = 6.x

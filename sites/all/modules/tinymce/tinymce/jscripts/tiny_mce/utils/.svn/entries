@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2008-04-04T17:21:03.090535Z"
+   url="file:///home/admin/www/svn/repos/oardc/sites/all/modules/tinymce/tinymce/jscripts/tiny_mce/utils"
+   last-author="root"
+   kind="dir"
+   uuid="9b325fa0-5c49-0410-a53b-823f039e45d9"
+   revision="2"/>
+<entry
+   committed-rev="2"
+   name="mctabs.js"
+   text-time="2008-04-04T17:23:15.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="3d87a9682afded75d8d40f00711aad23"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:15.000000Z"/>
+<entry
+   committed-rev="2"
+   name="validate.js"
+   text-time="2008-04-04T17:23:15.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="5c802f87e7ed7b19a7dbc6e70da840a8"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:15.000000Z"/>
+<entry
+   committed-rev="2"
+   name="editable_selects.js"
+   text-time="2008-04-04T17:23:15.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="80aeaa5b1ec8578fad591212a75d4b1a"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:15.000000Z"/>
+<entry
+   committed-rev="2"
+   name="mclayer.js"
+   text-time="2008-04-04T17:23:15.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="0ab77501dd872e60ffbf876c56558bfc"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:15.000000Z"/>
+<entry
+   committed-rev="2"
+   name="form_utils.js"
+   text-time="2008-04-04T17:23:15.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="e383d84a698118c897d4bd56ca730264"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:15.000000Z"/>
+</wc-entries>

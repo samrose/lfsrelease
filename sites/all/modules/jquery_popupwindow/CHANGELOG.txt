@@ -1,0 +1,14 @@
+// $Id: CHANGELOG.txt,v 1.1.2.6 2009/10/15 14:51:48 aaron Exp $
+
+by aaron: Add the new preset admin menu page (for upgrading from d5).
+by aaron: Cache presets for performance.
+by aaron: Propagate settings to jquery drupal behavior.
+by aaron: Add settings.
+by aaron: Move hook_jq to [module].jq.inc file.
+by aaron: Update to Drupal-6--1 and make new release.
+
+=============
+ DRUPAL-6--1
+=============
+
+by aaron: Create wrapper for jquery_popupwindow.

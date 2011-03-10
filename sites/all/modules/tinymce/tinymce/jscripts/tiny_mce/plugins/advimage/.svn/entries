@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   committed-rev="2"
+   name=""
+   committed-date="2008-04-04T17:21:03.090535Z"
+   url="file:///home/admin/www/svn/repos/oardc/sites/all/modules/tinymce/tinymce/jscripts/tiny_mce/plugins/advimage"
+   last-author="root"
+   kind="dir"
+   uuid="9b325fa0-5c49-0410-a53b-823f039e45d9"
+   revision="2"/>
+<entry
+   committed-rev="2"
+   name="editor_plugin.js"
+   text-time="2008-04-04T17:23:15.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="78ef6855c9c89dbc261fd1c6ffd3beea"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:15.000000Z"/>
+<entry
+   name="jscripts"
+   kind="dir"/>
+<entry
+   name="langs"
+   kind="dir"/>
+<entry
+   name="images"
+   kind="dir"/>
+<entry
+   committed-rev="2"
+   name="editor_plugin_src.js"
+   text-time="2008-04-04T17:23:15.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="b30d5b1c6008f1c34998c8ce9e711746"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:15.000000Z"/>
+<entry
+   name="css"
+   kind="dir"/>
+<entry
+   committed-rev="2"
+   name="image.htm"
+   text-time="2008-04-04T17:23:15.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="56963d64004291326f719c5c37c76dd9"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:15.000000Z"/>
+<entry
+   committed-rev="2"
+   name="readme.txt"
+   text-time="2008-04-04T17:23:15.000000Z"
+   committed-date="2008-04-04T17:21:03.090535Z"
+   checksum="fe81b122bcf0e8599bb841cca33f967a"
+   last-author="root"
+   kind="file"
+   prop-time="2008-04-04T17:23:15.000000Z"/>
+</wc-entries>
